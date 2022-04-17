@@ -1,11 +1,53 @@
-h3{
+textarea {
+    resize: none;
+    outline:none;
+}
+
+p{
     font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 18px;
+    font-size:14px;
+    margin-right: 5px;
 }
 
 
+li{
+    width: auto;
+    height:100%;
+    left:0px;
+    padding:8px;
+    display:flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    word-break: break-word;
+    border-bottom: solid 2px #F3F3F3;
+    border-top: solid 2px #F3F3F3;
+}
+
+.sender{
+    font-style: bold;
+    font-family: 'Roboto', sans-serif;
+    font-weight:700;
+    font-size:14px;
+}
+
+.receiver{
+    font-style: bold;
+    font-family: 'Roboto', sans-serif;
+    font-weight:700;
+    font-size:14px;
+}
+
+.time{
+color: #AAAAAA;
+
+}
+
+.text{
+    font-family: 'Roboto', sans-serif;
+    font-size:14px;
+
+}
 
 .header {
     width: 100%;
@@ -22,10 +64,22 @@ h3{
 
 
 .chat{
-    background-color: #E5E5E5;
+    background-color: #F3F3F3;
     width: 100%;
-    height: 2000px;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    overflow-y:hidden ;
+}
 
+.status {
+background-color: rgba(220, 220, 220, 1);
+
+}
+
+.private-message{
+    background-color:rgba(255, 222, 222, 1)
 }
 
 .write-here{
@@ -36,9 +90,26 @@ h3{
     display:flex;
     align-items:center ;
     justify-content: space-around;
-    position:fixed;
+    position:relative;
     bottom: 0px;
     left: 0px;
 }
 
+::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.send-text {
+    border:0px;
+    width : 100%;
+    padding:16px;
+}
+
+
+
+.esta-na-sala {
+}
 

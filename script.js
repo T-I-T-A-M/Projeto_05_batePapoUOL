@@ -86,6 +86,8 @@ function tratarDadosChat (){
                     }
 
                 }
+                const elementoQueQueroQueApareca = document.querySelector(".chat").lastChild
+                elementoQueQueroQueApareca.scrollIntoView();
             }
             }
 

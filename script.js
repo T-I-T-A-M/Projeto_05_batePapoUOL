@@ -51,7 +51,7 @@ function tratarDadosChat (){
     function renderizarChat(chat){
         console.log("funcao renderizar chat")
         console.log(chat.data[1].from)
-                
+        document.querySelector(".chat").innerHTML=""
 
 // Renderização do chat antes da entrada do usuario
 

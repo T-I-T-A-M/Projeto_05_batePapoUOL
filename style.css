@@ -46,7 +46,6 @@ color: #AAAAAA;
 .text{
     font-family: 'Roboto', sans-serif;
     font-size:14px;
-
 }
 
 .header {
@@ -88,7 +87,7 @@ background-color: rgba(220, 220, 220, 1);
     width: 100%;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
     display:flex;
-    align-items:center ;
+    align-items:center;
     justify-content: space-around;
     position:sticky;
     bottom: 0px;
@@ -108,7 +107,10 @@ background-color: rgba(220, 220, 220, 1);
     padding:16px;
 }
 
-
+.send-symbol {
+    cursor:pointer;
+    padding: 20px;
+}
 
 .esta-na-sala {
 }

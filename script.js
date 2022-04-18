@@ -1,40 +1,59 @@
+
+
+compararNomes()
+
+function compararNomes (){
+console.log("funcao comecou")
+
 let usuario = prompt ("Qual o seu nome ?");
 
 
 let usuarioObjeto = {
 name: usuario,
 }
-
-compararNomes()
-
-function compararNomes (){
-console.log("funcao comecou")
     let promise = axios.post ("https://mock-api.driven.com.br/api/v6/uol/participants",usuarioObjeto);
     promise.then(tratarSucesso)
     promise.catch(tratarErro)
 
 
+    function tratarErro (err){
+        console.log("funcao erro")
+        let respostaServidor=err.response.status
+
+        if (respostaServidor === 400){
+            console.log("if erro comecou")
+
+            alert ("Nome já utilizado, escolha outro nome!")
+
+            compararNomes()
+        }
+
+}
+}
+//Sucesso para entrar na sala
+
+
     function tratarSucesso (sucess){
         console.log("funcao sucesso")
-        let viagem = sucess
-        console.log(viagem)
         alert ("Usuario inserido com sucesso, você já vai entrar na sala")
 
         tratarDadosChat()
 
-        function tratarDadosChat (){
-            console.log("tratarDadosChat")
+    }
 
-            promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/messages")
-            promise.then(renderizarChat)
+function tratarDadosChat (){
+    console.log("tratarDadosChat")
+
+    promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/messages")
+    promise.then(renderizarChat)
 
 
-            function renderizarChat(chat){
-                console.log("funcao renderizar chat")
-                console.log(chat.data[1].from)
+    function renderizarChat(chat){
+        console.log("funcao renderizar chat")
+        console.log(chat.data[1].from)
                 
 
-// Renderizar chat antes da entrada do usuario
+// Renderização do chat antes da entrada do usuario
 
                 for (let i=0; i<chat.data.length; i++){
                     let tipoMensagem= chat.data[i].type;
@@ -69,33 +88,8 @@ console.log("funcao comecou")
                 }
             }
             }
-        }
 
-    }
-
-    function tratarErro (err){
-        console.log("funcao erro")
-        let respostaServidor=err.response.status
-
-        while (respostaServidor === 400){
-            console.log("while comecou")
-
-            alert ("Nome já utilizado, escolha outro nome!")
-            usuario = prompt ("Qual o seu nome ?")
-            
-            usuarioObjeto = {
-                name: usuario,
-                }
-                compararNomes()
-        }
-
-}
-
-
-// AINDA FALTA ARRUMAR ESSA COMPARAÇÃO DE NOMES
-
-//chat -> entrar no site
-
+const refrescodochat = setInterval (tratarDadosChat,3000)
 
 
 
